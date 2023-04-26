@@ -1,0 +1,83 @@
+:root{
+  --page1-color: steelblue;
+  --page2-color: tan;
+  --page3-color: slateblue;
+  --page4-color: darkgreen;
+  --animte-speed: 2s;
+}
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.4;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+#page-1{background-color: var(--page1-color);}
+#page-2{background-color: var(--page2-color);}
+#page-3{background-color: var(--page3-color);}
+#page-4{background-color: var(--page4-color);}
+.page{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 4rem;
+}
+#page-1 h1{
+  font-size: 4rem;
+  line-height: 1.2;
+  margin: 1rem;
+
+}
+#page-1 p{
+  font-size: 1.3rem;
+}
+.btn{
+  display:inline-block;
+  padding: 1rem 2rem;
+  font-size: 1.1;
+  background-color: #f4f4f4;
+  color: #333;
+  text-decoration: none;
+  border: none;
+  border-radius: 10px;
+  margin: 0 1rem;
+  margin-top: 1rem;
+  transition: all .3s ease-in;
+}
+.btn:hover,.btn-dark{
+  background-color: #333;
+  color: #f4f4f4;
+}
+.btn-dark:hover{
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Page animation */
+#page-1 h1{
+  transform: translateY(-1200px);
+  animation: heading var(--animte-speed) forwards ease-in;
+}
+
+/* keyframes */
+@keyframes heading {
+  to{
+    transform: translateY(0);
+  }
+}
+
+#page-1 p{
+  transform: translateX(-1200px);
+  animation: text var(--animte-speed) forwards ease-in 1s;
+}
+
+/* keyframes */
+@keyframes text {
+  to{
+    transform: translateX(0);
+  }
+}
